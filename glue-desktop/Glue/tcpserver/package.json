@@ -1,0 +1,12 @@
+{
+  "name": "glue-server",
+  "version": "1.0.0",
+  "main": "server/app.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "msgpackr": "^1.7.2"
+  }
+}
