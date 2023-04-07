@@ -57,7 +57,7 @@ class UserController extends GetxController {
 
   void logOut() async {
     final prefs = await SharedPreferences.getInstance();
-
+    
     prefs.remove('user');
     Get.offAndToNamed("/login");
   }

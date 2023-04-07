@@ -13,6 +13,7 @@ const Login = ({ auth, setAuth }) => {
 
   return (
     <div className="flex flex-col gap-4 justify-center items-center w-screen h-screen bg-gray-100 loginwindow">
+      <div className="mb-8 text-5xl font-bold">Glue</div>
       <input
         value={name}
         onChange={(e) => setName(e.target.value)}

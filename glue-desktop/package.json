@@ -7,7 +7,7 @@
   "scripts": {
     "start": "cd client && yarn start",
     "dev": "concurrently -k \"BROWSER=none yarn start\" \"yarn:electron\"",
-    "electron": "wait-on tcp:3000 && electron ."
+    "electron": "electron ."
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

@@ -36,6 +36,8 @@ class TcpServer {
     });
   }
 
+  
+
   ondata(s, buf) {
     console.log(buf);
     if (buf.length === 0) return;
@@ -113,8 +115,6 @@ server.get("AUTH", (s, data) => {
   server.rooms[token][s.id] = { ...data };
   server.clients[s.id] = { room: token, socket: s };
   s.send({ type: "AUTH_OK", id: s.id });
-  console.log("asd");
-  s.send({ type: "CLIP_TEXT", text: "penis" });
 });
 
 server.get("CLIP_TEXT", (s, data) => {

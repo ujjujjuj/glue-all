@@ -7,6 +7,7 @@ import 'package:get/route_manager.dart';
 import 'package:glue/controllers/init_binding.dart';
 import 'package:glue/routes.dart';
 import 'package:glue/theme/theme.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,9 +34,14 @@ class MyApp extends StatelessWidget {
     bool success2 = await FlutterBackground.enableBackgroundExecution();
   }
 
+  void getFileStorageNotification() async {
+    await Permission.storage.request();
+  }
+
   @override
   Widget build(BuildContext context) {
     enableNotification();
+    getFileStorageNotification();
     return GetMaterialApp(
       initialBinding: Init(),
       debugShowCheckedModeBanner: false,

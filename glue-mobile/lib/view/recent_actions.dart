@@ -11,11 +11,11 @@ class RecentActions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 25),
+        padding: const EdgeInsets.symmetric(horizontal: 25),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 70,
             ),
             Row(
@@ -26,15 +26,15 @@ class RecentActions extends StatelessWidget {
                     Get.back();
                   },
                   child: Container(
-                    padding: EdgeInsets.only(bottom: 2),
-                    child: Icon(Icons.arrow_back_ios_new_rounded,
+                    padding: const EdgeInsets.only(bottom: 2),
+                    child: const Icon(Icons.arrow_back_ios_new_rounded,
                         color: Color(0xff2C2B2B), size: 18),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 7,
                 ),
-                Text(
+                const Text(
                   "Recent Actions",
                   style: TextStyle(
                     fontSize: 23,
@@ -45,19 +45,19 @@ class RecentActions extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Expanded(
                 child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               child: Obx(
                 () => Wrap(
                   runSpacing: 15,
                   children: tcpController.recents.isNotEmpty
                       ? tcpController.recents
                           .map((element) => Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Expanded(
                                         flex: 65,
@@ -72,13 +72,13 @@ class RecentActions extends StatelessWidget {
                                               }
                                             },
                                             text: element.action,
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 fontSize: 18,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.1,
                                                 color: Color(0xff2C2B2B),
                                                 fontFamily: "Proxima Nova"),
-                                            linkStyle: TextStyle(
+                                            linkStyle: const TextStyle(
                                                 fontSize: 18,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.1,
@@ -89,7 +89,7 @@ class RecentActions extends StatelessWidget {
                                         child: Text(
                                           element.toDevice,
                                           textAlign: TextAlign.right,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               fontSize: 15,
                                               height: 1.2,
                                               fontWeight: FontWeight.w400,

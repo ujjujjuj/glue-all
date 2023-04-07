@@ -42,7 +42,7 @@ class _HomeState extends State<Home> {
             items: [
               BottomNavigationBarItem(
                   icon: Container(
-                    margin: EdgeInsets.only(bottom: 7),
+                    margin: const EdgeInsets.only(bottom: 7),
                     child: const Icon(
                       Icons.home,
                       size: 25.0,
@@ -51,8 +51,8 @@ class _HomeState extends State<Home> {
                   label: 'Home'),
               BottomNavigationBarItem(
                   icon: Container(
-                    margin: EdgeInsets.only(bottom: 7),
-                    child: Icon(
+                    margin: const EdgeInsets.only(bottom: 7),
+                    child: const Icon(
                       Icons.insert_drive_file_rounded,
                       size: 25.0,
                     ),
@@ -83,9 +83,10 @@ class _HomeState extends State<Home> {
                 children: [
                   GestureDetector(
                     onTap: () {
+                      tcpController.closeConnection();
                       user.logOut();
                     },
-                    child: Text(
+                    child: const Text(
                       "Log Out",
                       style: TextStyle(
                           fontSize: 22,
@@ -102,21 +103,21 @@ class _HomeState extends State<Home> {
                 buildBottomNavigationMenu(context, landingPageController),
             body: Stack(children: [
               Positioned(
+                right: 25,
+                top: 55,
                 child: GestureDetector(
                   onTap: () {
                     landingPageController.toggleDrawer();
                   },
-                  child: Icon(
+                  child: const Icon(
                     Icons.menu_rounded,
                     size: 33,
                   ),
                 ),
-                right: 25,
-                top: 55,
               ),
               Obx(() => IndexedStack(
                     index: landingPageController.tabIndex.value,
-                    children: [Landing(), Notebooks()],
+                    children: [const Landing(), Notebooks()],
                   ))
             ])));
   }

@@ -36,8 +36,8 @@ class _LandingState extends State<Landing> {
               decoration: BoxDecoration(
                   border: Border.all(
                       color: (index == deviceIndex)
-                          ? Color.fromARGB(154, 44, 43, 43)
-                          : Color(0xffECECEC),
+                          ? const Color.fromARGB(154, 44, 43, 43)
+                          : const Color(0xffECECEC),
                       width: 1),
                   color: const Color(0xffECECEC),
                   borderRadius: BorderRadius.circular(4)),
@@ -92,8 +92,6 @@ class _LandingState extends State<Landing> {
     await myFile.readAsBytes().then((value) {
       bytes = Uint8List.fromList(value);
     }).catchError((onError) {
-      print('Exception Error while reading audio from path:' +
-          onError.toString());
     });
     return bytes;
   }
@@ -177,7 +175,7 @@ class _LandingState extends State<Landing> {
             height: 12,
           ),
           Padding(
-            padding: EdgeInsets.only(right: 25),
+            padding: const EdgeInsets.only(right: 25),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -215,29 +213,29 @@ class _LandingState extends State<Landing> {
                   },
                   child: Container(
                     width: getBoxWidth(context),
-                    padding: EdgeInsets.symmetric(vertical: 12),
+                    padding: const EdgeInsets.symmetric(vertical: 12),
                     decoration: BoxDecoration(
-                        color: clipOt ? Color(0xff2C2B2B) : Colors.white,
+                        color: clipOt ? const Color(0xff2C2B2B) : Colors.white,
                         borderRadius: BorderRadius.circular(5),
                         border:
-                            Border.all(color: Color(0xff2C2B2B), width: 1.7)),
+                            Border.all(color: const Color(0xff2C2B2B), width: 1.7)),
                     alignment: Alignment.center,
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
                             Icons.paste,
-                            color: clipOt ? Colors.white : Color(0xff2C2B2B),
+                            color: clipOt ? Colors.white : const Color(0xff2C2B2B),
                             size: 22,
                           ),
-                          SizedBox(width: 4),
+                          const SizedBox(width: 4),
                           Text(
                             "Clip",
                             style: TextStyle(
                                 fontSize: 19,
                                 fontWeight: FontWeight.w600,
                                 color:
-                                    clipOt ? Colors.white : Color(0xff2C2B2B),
+                                    clipOt ? Colors.white : const Color(0xff2C2B2B),
                                 fontFamily: "Proxima Nova"),
                           )
                         ]),
@@ -286,29 +284,29 @@ class _LandingState extends State<Landing> {
                   },
                   child: Container(
                     width: getBoxWidth(context),
-                    padding: EdgeInsets.symmetric(vertical: 12),
+                    padding: const EdgeInsets.symmetric(vertical: 12),
                     decoration: BoxDecoration(
-                        color: fileOt ? Color(0xff2C2B2B) : Colors.white,
+                        color: fileOt ? const Color(0xff2C2B2B) : Colors.white,
                         borderRadius: BorderRadius.circular(5),
                         border:
-                            Border.all(color: Color(0xff2C2B2B), width: 1.7)),
+                            Border.all(color: const Color(0xff2C2B2B), width: 1.7)),
                     alignment: Alignment.center,
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
                             Icons.insert_drive_file_outlined,
-                            color: fileOt ? Colors.white : Color(0xff2C2B2B),
+                            color: fileOt ? Colors.white : const Color(0xff2C2B2B),
                             size: 22,
                           ),
-                          SizedBox(width: 4),
+                          const SizedBox(width: 4),
                           Text(
                             "File",
                             style: TextStyle(
                                 fontSize: 19,
                                 fontWeight: FontWeight.w600,
                                 color:
-                                    fileOt ? Colors.white : Color(0xff2C2B2B),
+                                    fileOt ? Colors.white : const Color(0xff2C2B2B),
                                 fontFamily: "Proxima Nova"),
                           )
                         ]),
@@ -352,29 +350,29 @@ class _LandingState extends State<Landing> {
                   },
                   child: Container(
                     width: getBoxWidth(context),
-                    padding: EdgeInsets.symmetric(vertical: 12),
+                    padding: const EdgeInsets.symmetric(vertical: 12),
                     decoration: BoxDecoration(
-                        color: !imageOt ? Colors.white : Color(0xff2C2B2B),
+                        color: !imageOt ? Colors.white : const Color(0xff2C2B2B),
                         borderRadius: BorderRadius.circular(5),
                         border:
-                            Border.all(color: Color(0xff2C2B2B), width: 1.7)),
+                            Border.all(color: const Color(0xff2C2B2B), width: 1.7)),
                     alignment: Alignment.center,
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
                             Icons.image_outlined,
-                            color: imageOt ? Colors.white : Color(0xff2C2B2B),
+                            color: imageOt ? Colors.white : const Color(0xff2C2B2B),
                             size: 22,
                           ),
-                          SizedBox(width: 4),
+                          const SizedBox(width: 4),
                           Text(
                             "Image",
                             style: TextStyle(
                                 fontSize: 19,
                                 fontWeight: FontWeight.w600,
                                 color:
-                                    imageOt ? Colors.white : Color(0xff2C2B2B),
+                                    imageOt ? Colors.white : const Color(0xff2C2B2B),
                                 fontFamily: "Proxima Nova"),
                           )
                         ]),
@@ -383,16 +381,16 @@ class _LandingState extends State<Landing> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           Container(
             width: double.infinity,
-            margin: EdgeInsets.only(right: 25),
+            margin: const EdgeInsets.only(right: 25),
             height: 1.1,
-            color: Color(0xff2C2B2B),
+            color: const Color(0xff2C2B2B),
           ),
-          SizedBox(
+          const SizedBox(
             height: 23,
           ),
           GestureDetector(
@@ -403,16 +401,16 @@ class _LandingState extends State<Landing> {
                 Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
               Text("Recent Actions",
                   style: Theme.of(context).textTheme.headline4),
-              SizedBox(
+              const SizedBox(
                 width: 8,
               ),
               Padding(
-                  padding: EdgeInsets.only(top: 2),
+                  padding: const EdgeInsets.only(top: 2),
                   child:
                       Text(">", style: Theme.of(context).textTheme.headline4)),
             ]),
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           Expanded(
@@ -420,7 +418,7 @@ class _LandingState extends State<Landing> {
                 physics: const BouncingScrollPhysics(),
                 child: Obx(
                   () => Padding(
-                    padding: EdgeInsets.only(right: 25),
+                    padding: const EdgeInsets.only(right: 25),
                     child: Wrap(
                       runSpacing: 15,
                       children: tcpController.recents.isNotEmpty
@@ -442,12 +440,12 @@ class _LandingState extends State<Landing> {
                                                   }
                                                 },
                                                 text: element.action,
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                     fontSize: 17,
                                                     fontWeight: FontWeight.w400,
                                                     color: Color(0xff2C2B2B),
                                                     fontFamily: "Proxima Nova"),
-                                                linkStyle: TextStyle(
+                                                linkStyle: const TextStyle(
                                                     fontSize: 17,
                                                     fontWeight: FontWeight.w400,
                                                     color: Color(0xff3B86F5),

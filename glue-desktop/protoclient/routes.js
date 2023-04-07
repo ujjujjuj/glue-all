@@ -1,7 +1,7 @@
 const TCPClient = require("./TCPClient");
 const fs = require("fs");
 
-const client = new TCPClient("192.168.196.25", 31337);
+const client = new TCPClient("localhost", 31337);
 let clipboardy = null;
 import("clipboardy").then((mod) => (clipboardy = mod.default));
 const downloadsFolder = require("downloads-folder");

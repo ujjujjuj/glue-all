@@ -16,21 +16,19 @@ class TCPClient {
   var buffers = List.empty(growable: true);
   Map<String, dynamic> routes = {};
   Map<String, dynamic> state = {"auth": false, "id": null};
-
+  bool selfClosed = false;
   TCPClient(this.host, this.port, this.token);
 
   connect(onSuccess, onDisconnect) async {
     try {
+      print("connecting...");
       s = await Socket.connect(host, port);
-      print('Connected to: ${s.remoteAddress.address}:${s.remotePort}');
       s.setOption(SocketOption.tcpNoDelay, true);
       onSuccess();
       s.listen(onData, onDone: () {
-        print("Disconnected");
         s.close();
-        onDisconnect();
+        if (!selfClosed) onDisconnect();
       }, onError: (error) {
-        print(error.toString());
         s.close();
         onDisconnect();
       });
@@ -38,6 +36,11 @@ class TCPClient {
       print(error);
       onDisconnect();
     }
+  }
+
+  disconnect() {
+    s.close();
+    selfClosed = true;
   }
 
   send(obj) {
@@ -93,9 +96,7 @@ class TCPClient {
     Map<dynamic, dynamic> obj = deserialize(data);
     if (routes.keys.contains(obj["type"])) {
       routes[obj["type"]](obj);
-    } else {
-      print('Unknown route ${obj["type"]}');
-    }
+    } else {}
     onData(buff.sublist(length + 4));
   }
 

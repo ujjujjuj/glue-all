@@ -17,7 +17,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          margin: EdgeInsets.symmetric(horizontal: 30),
+          margin: const EdgeInsets.symmetric(horizontal: 30),
           alignment: Alignment.center,
           child: Form(
             key: _formKey,
@@ -25,7 +25,7 @@ class _LoginState extends State<Login> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text(
+                  const Text(
                     "Glue",
                     style: TextStyle(
                         fontSize: 45,
@@ -34,7 +34,7 @@ class _LoginState extends State<Login> {
                         color: Color(0xff2C2B2B),
                         fontFamily: "Proxima Nova"),
                   ),
-                  SizedBox(height: 60),
+                  const SizedBox(height: 60),
                   TextFormField(
                     controller: name,
                     validator: (text) {
@@ -46,20 +46,20 @@ class _LoginState extends State<Login> {
                     decoration: InputDecoration(
                         hintText: "Name",
                         contentPadding:
-                            EdgeInsets.symmetric(vertical: 20, horizontal: 17),
+                            const EdgeInsets.symmetric(vertical: 20, horizontal: 17),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 color: Color(0xff2C2B2B), width: 2.0)),
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 color: Color(0xff2C2B2B), width: 2.0)),
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 color: Color(0xff2C2B2B), width: 2.0))),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.w400,
                       letterSpacing: 0.15,
@@ -67,7 +67,7 @@ class _LoginState extends State<Login> {
                       fontFamily: "Proxima Nova",
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 18,
                   ),
                   TextFormField(
@@ -81,20 +81,20 @@ class _LoginState extends State<Login> {
                     decoration: InputDecoration(
                         hintText: "Token",
                         contentPadding:
-                            EdgeInsets.symmetric(vertical: 20, horizontal: 17),
+                            const EdgeInsets.symmetric(vertical: 20, horizontal: 17),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 color: Color(0xff2C2B2B), width: 2.0)),
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 color: Color(0xff2C2B2B), width: 2.0)),
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 color: Color(0xff2C2B2B), width: 2.0))),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.w400,
                       letterSpacing: 0.15,
@@ -102,7 +102,7 @@ class _LoginState extends State<Login> {
                       fontFamily: "Proxima Nova",
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 18,
                   ),
                   Container(
@@ -114,15 +114,15 @@ class _LoginState extends State<Login> {
                           }
                         },
                         style: TextButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 19),
-                          backgroundColor: Color(0xff2C2B2B),
+                          padding: const EdgeInsets.symmetric(vertical: 19),
+                          backgroundColor: const Color(0xff2C2B2B),
                           elevation: 0,
                           shape: const RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(8.0)),
                           ),
                         ),
-                        child: Text("Login",
+                        child: const Text("Login",
                             style: TextStyle(
                               fontSize: 22,
                               fontWeight: FontWeight.w600,

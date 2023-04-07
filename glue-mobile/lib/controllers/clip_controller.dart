@@ -9,7 +9,7 @@ class ClipController extends GetxController {
   TCPController controller = Get.find<TCPController>();
   @override
   void onReady() async {
-    Timer.periodic(Duration(seconds: 1), (timer) {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
       Clipboard.getData(Clipboard.kTextPlain).then((value) {
         if (value != null) {
           if (value.text != clipData.value &&
